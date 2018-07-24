@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>lista-tickets</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let ticket of tickets">
+      <ion-badge *ngIf="ticket.prioridad ==1" color="alta">Alta</ion-badge>
+      <ion-badge *ngIf="ticket.prioridad ==2" color="media">Media</ion-badge>
+      <ion-badge *ngIf="ticket.prioridad ==3" color="baja">Baja</ion-badge>
+      {{ticket.nombre}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+
