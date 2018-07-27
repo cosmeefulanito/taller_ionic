@@ -1,0 +1,25 @@
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre del Ticket</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>    
+    </ion-item>
+    <ion-item>
+        <ion-label>Prioridad</ion-label>
+        <ion-select [(ngModel)]="prioridad">
+          <ion-option value="1">Alta</ion-option>
+          <ion-option value="2">Media</ion-option>
+          <ion-option value="3">Baja</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <div class="foto_container">
+        <button ion-button full (click)="tomarFoto()">
+          <ion-icon name="camera"></ion-icon>Tomar Foto
+        </button>
+      </div>
+    </ion-item>    
+  </ion-list>
+  <button ion-button full large color="aogreen" (click)="nuevoTicket()">Nuevo Ticket</button>
+</ion-content>

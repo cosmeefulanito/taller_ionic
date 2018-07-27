@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import {ApiProvider } from '../../providers/api/api';
+import { ApiProvider } from '../../providers/api/api';
 
 @IonicPage()
 @Component({
@@ -48,6 +48,16 @@ export class ListaTicketsPage {
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaTicketsPage');
+  }
+
+  public addTicket(){
+    this.navCtrl.push('NuevoTicketPage');
+  }
+
+  public detalleTicket(id){
+    this.navCtrl.push('EditarTicketPage',{
+      idTicket: id
+    });
   }
 
 }
