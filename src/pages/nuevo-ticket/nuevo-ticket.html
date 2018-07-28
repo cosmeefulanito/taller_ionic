@@ -14,11 +14,10 @@
         </ion-select>
     </ion-item>
     <ion-item>
-      <div class="foto_container">
-        <button ion-button full (click)="tomarFoto()">
-          <ion-icon name="camera"></ion-icon>Tomar Foto
-        </button>
-      </div>
+      <div class="foto_container" *ngIf="image == ''"></div>
+      <img src="{{image}}" *ngIf="image != ''" class="foto_preview">
+      <button ion-button full (click)="tomarFoto()"><ion-icon name="camera"></ion-icon>
+          <ion-icon name="camera"></ion-icon>Tomar Foto </button>      
     </ion-item>    
   </ion-list>
   <button ion-button full large color="aogreen" (click)="nuevoTicket()">Nuevo Ticket</button>

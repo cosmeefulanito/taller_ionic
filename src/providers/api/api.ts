@@ -1,6 +1,8 @@
 //import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import * as randomString from 'randomstring';
+
 
 
 
@@ -36,6 +38,12 @@ export class ApiProvider {
       estado: 1
     }
     return firebase.database().ref('/tickets/'+id).update(resolver,callback);
+  }
+
+  //Subir un archivo a firebase y retornar la URL
+  public subirStorage(dataUrl){
+    let rutaArchivo = "/" + randomString.generate()+'.jpg';
+    return firebase.storage().ref(rutaArchivo);
   }
 
 }

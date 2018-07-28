@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Img } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 
 
@@ -12,7 +12,7 @@ import { ApiProvider } from '../../providers/api/api';
 export class EditarTicketPage {
   public prioridad;
   public nombre;  
-  public image;
+  public image='';
   public id;
 
   constructor(
@@ -29,6 +29,7 @@ export class EditarTicketPage {
         this.id = datos.key;
         this.nombre = datos_procesados.nombre;
         this.prioridad = datos_procesados.prioridad;
+        this.image = datos_procesados.image;
         
 
       });
@@ -38,7 +39,9 @@ export class EditarTicketPage {
     let datos = {
       estado: 0,
       nombre: this.nombre,
-      prioridad: this.prioridad
+      prioridad: this.prioridad, 
+      Img: this.image
+
     }
 
     this.api.editTicket(this.id, datos,() => {
